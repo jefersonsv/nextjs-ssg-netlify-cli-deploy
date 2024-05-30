@@ -12,10 +12,24 @@
   # This sample publishes the directory located at the absolute 
   # path "root/project/build-output"
 
-  publish = ".next/"
+  publish = ".next"
 
   # Default build command.
   command = "next build"
 
 [functions]
   directory = "src/functions"
+
+#[[plugins]]
+#  package = "@netlify/plugin-nextjs"
+# https://app.netlify.com/teams/jefersonsv/plugins/@netlify/plugin-nextjs/install?utm_source=blog&utm_medium=next-on-netlify-jl&utm_campaign=devex
+
+[[redirects]]
+  from = "/_next/*"
+  to = "/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/_next/image*"
+  to = "/_ipx/w_:width,q_:quality/:url"
+  status = 301
