@@ -20,8 +20,8 @@
 [functions]
   directory = "src/functions"
 
-#[[plugins]]
-#  package = "@netlify/plugin-nextjs"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 # https://app.netlify.com/teams/jefersonsv/plugins/@netlify/plugin-nextjs/install?utm_source=blog&utm_medium=next-on-netlify-jl&utm_campaign=devex
 
 [[redirects]]
@@ -30,6 +30,8 @@
   status = 200
 
 [[redirects]]
-  from = "/_next/image*"
-  to = "/_ipx/w_:width,q_:quality/:url"
-  status = 301
+  from = '/_next/image/*'
+  query = { q = ':quality', url = ':url', w = ':width' }
+  to = '/.netlify/images?url=:url&w=:width&q=:quality'
+  status = 200
+  force = true
