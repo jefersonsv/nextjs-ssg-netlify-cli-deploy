@@ -1,5 +1,9 @@
 # Settings for the [build] key are global and are applied to
 # all deploy contexts unless overridden by a context-specific setting.
+
+[context.deploy-preview.environment]
+  PNPM_FLAGS = "--shamefully-hoist"
+
 [functions]
   directory = "src/app/functions"
 
@@ -18,7 +22,7 @@
   publish = ".next"
 
   # Default build command.
-  command = "pnpm run build"
+  command = "pnpm build"
 
 # --filter nextjs-ssg-netlify-cli-deploy-web 
 
