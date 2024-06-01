@@ -18,7 +18,7 @@
   publish = ".next"
 
   # Default build command.
-  command = "yarn run build"
+  command = "pnpm run build"
 
 # --filter nextjs-ssg-netlify-cli-deploy-web 
 
